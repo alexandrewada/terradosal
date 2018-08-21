@@ -1,4 +1,4 @@
-import { LocalizacaoPage } from './../localizacao/localizacao';
+
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -12,8 +12,10 @@ export class HomePage {
 
   }
 
-  goLocalizacao() {
-    this.navCtrl.push(LocalizacaoPage);
+  goPage(page) {
+    this.navCtrl.push(page);
   }
+
+
 
 }

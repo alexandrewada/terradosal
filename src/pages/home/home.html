@@ -10,15 +10,15 @@
  <div class="padding-top-10-percent">
  <ion-row>
    <ion-col>
-     <ion-img width="80" height="80" src="assets/imgs/icon_play.png" ></ion-img><br>
+     <ion-img (click)="goPage('AovivoPage')" width="80" height="80" src="assets/imgs/icon_play.png" ></ion-img><br>
      <div class="snow">Ao Vivo</div>
    </ion-col>
    <ion-col>
-     <ion-img width="80" height="80" src="assets/imgs/icone_colorido.png"></ion-img><br>
+     <ion-img (click)="goPage('ProgramaPage')" width="80" height="80" src="assets/imgs/icone_colorido.png"></ion-img><br>
      <div class="snow">Programas</div>
    </ion-col>
    <ion-col>
-     <ion-img width="80" height="80" src="assets/imgs/icon_face_2.png"></ion-img><br>
+     <ion-img (click)="goPage('FacebookPage')" width="80" height="80" src="assets/imgs/icon_face_2.png"></ion-img><br>
      <div class="snow">Facebook</div>
    </ion-col>
  </ion-row>
@@ -26,15 +26,15 @@
  <div class="padding-top-10-percent">
  <ion-row>
    <ion-col >
-     <ion-img width="80" height="80" src="assets/imgs/icon_map_2.png"></ion-img><br>
-     <div class="snow" (click)="goLocalizacao()"  >Localização</div>
+     <ion-img width="80" (click)="goPage('LocalizacaoPage')" height="80" src="assets/imgs/icon_map_2.png"></ion-img><br>
+     <div class="snow"   >Localização</div>
    </ion-col>
    <ion-col>
-     <ion-img width="80" height="80" src="assets/imgs/icon_sobre_2.png"></ion-img><br>
+     <ion-img width="80" (click)="goPage('SobrePage')" height="80" src="assets/imgs/icon_sobre_2.png"></ion-img><br>
      <div class="snow">Sobre</div>
    </ion-col>
    <ion-col>
-     <ion-img width="80" height="80" src="assets/imgs/icon_contact.png"></ion-img><br>
+     <ion-img width="80" (click)="goPage('ContatoPage')" height="80" src="assets/imgs/icon_contact.png"></ion-img><br>
      <div class="snow">Contato</div>
    </ion-col>
  </ion-row>

@@ -1,4 +1,7 @@
-import { LocalizacaoPage } from './../pages/localizacao/localizacao';
+import { ContatoPageModule } from './../pages/contato/contato.module';
+import { AovivoPageModule } from './../pages/aovivo/aovivo.module';
+import { LocalizacaoPageModule } from './../pages/localizacao/localizacao.module';
+import { SobrePageModule } from './../pages/sobre/sobre.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -7,22 +10,26 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { FacebookPageModule } from '../pages/facebook/facebook.module';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    LocalizacaoPage
+    HomePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    SobrePageModule,
+    LocalizacaoPageModule,
+    FacebookPageModule,
+    AovivoPageModule,
+    ContatoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    LocalizacaoPage
+    HomePage
   ],
   providers: [
     StatusBar,
