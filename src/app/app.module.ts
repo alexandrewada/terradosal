@@ -11,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FacebookPageModule } from '../pages/facebook/facebook.module';
+import { ProgramaPageModule } from '../pages/programa/programa.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FacebookPageModule } from '../pages/facebook/facebook.module';
     LocalizacaoPageModule,
     FacebookPageModule,
     AovivoPageModule,
-    ContatoPageModule
+    ContatoPageModule,
+    ProgramaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

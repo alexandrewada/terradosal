@@ -1,0 +1,20 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Programas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <ion-card *ngFor="let playlist of listPlaylists"  >
+    <img [src]="playlist.raw.snippet.thumbnails.high.url"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{playlist.title}}
+        </ion-card-title>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

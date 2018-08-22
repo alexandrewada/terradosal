@@ -14,31 +14,26 @@
 
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      Entre em contato conosco
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-label floating>Nome completo</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nome completo</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>Email</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>Celular</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>Mensagem</ion-label>
-          <ion-input type="textarea"></ion-input>
-        </ion-item>
-      </ion-list>
-
-    </ion-card-content>
-  </ion-card>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Celular</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Mensagem</ion-label>
+      <ion-textarea rows="4" maxLength="500"  ></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <button ion-button type="submit" block>Enviar mensagem</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
