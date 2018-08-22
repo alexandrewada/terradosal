@@ -12,6 +12,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FacebookPageModule } from '../pages/facebook/facebook.module';
 import { ProgramaPageModule } from '../pages/programa/programa.module';
+import { YoutubeProvider } from '../providers/youtube/youtube';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProgramaPageModule } from '../pages/programa/programa.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    YoutubeProvider
   ]
 })
 export class AppModule {}

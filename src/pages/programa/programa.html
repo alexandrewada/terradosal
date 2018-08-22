@@ -12,8 +12,14 @@
     <ion-card-content>
       <ion-card-title>
         {{playlist.title}}
-        </ion-card-title>
-
+      </ion-card-title>
+      <ion-row>
+        <ion-col>
+          <button (click)="goToPlayList(playlist.id,playlist.title);"  float-right ion-button>
+            Ver vídeos
+          </button>
+        </ion-col>
+      </ion-row>
     </ion-card-content>
   </ion-card>
 
