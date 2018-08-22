@@ -13,6 +13,7 @@ import { HomePage } from '../pages/home/home';
 import { FacebookPageModule } from '../pages/facebook/facebook.module';
 import { ProgramaPageModule } from '../pages/programa/programa.module';
 import { YoutubeProvider } from '../providers/youtube/youtube';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { YoutubeProvider } from '../providers/youtube/youtube';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      mode: 'md'
+    }),
     SobrePageModule,
     LocalizacaoPageModule,
     FacebookPageModule,
@@ -38,6 +41,7 @@ import { YoutubeProvider } from '../providers/youtube/youtube';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    // {provide: LocationStrategy,useClass: PathLocationStrategy},
     YoutubeProvider
   ]
 })

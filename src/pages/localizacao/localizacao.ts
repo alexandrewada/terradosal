@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Loading, IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the LocalizacaoPage page.
@@ -15,7 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LocalizacaoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  loading:Loading;
+
+  constructor(public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams) {
+    this.loading = this.loadingCtrl.create({
+      content: 'Aguarde...'
+    });
+
+    this.loading.present();
+  }
+
+  LoadingOff() {
+    this.loading.dismiss();
   }
 
   ionViewDidLoad() {
