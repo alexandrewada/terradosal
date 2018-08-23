@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the FacebookPage page.
@@ -15,7 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FacebookPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  loader:any;
+
+  constructor(public loadingCtrl:LoadingController,public navCtrl: NavController, public navParams: NavParams) {
+    this.loader = this.loadingCtrl.create({
+      content: "Carregando facebook..."
+    });
+
+    this.loader.present();
+  }
+
+  LoadingOff() {
+    this.loader.dismiss();
   }
 
   ionViewDidLoad() {
