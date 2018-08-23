@@ -1,7 +1,8 @@
+import { PlayerPage } from './../player/player';
 import { YoutubeProvider } from './../../../providers/youtube/youtube';
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+// import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 
 
 /**
@@ -20,30 +21,49 @@ export class VideosPage {
   public playlistID;
   public listVideos = [];
   public programaName = 'Vídeos';
+  loading;
 
-  constructor(public player:YoutubeVideoPlayer, public navCtrl: NavController, public navParams: NavParams, public yt:YoutubeProvider, public loading:LoadingController) {
+  constructor( public navCtrl: NavController, public navParams: NavParams, public yt:YoutubeProvider, public loader:LoadingController) {
     this.playlistID   = this.navParams.get('playlistID');
     this.programaName = this.navParams.get('programaName');
-    const loader = this.loading.create({
-      content: "Carregando aguarde..."
-    });
 
+    this.showLoading();
   
-    loader.present();
     this.yt.getVideosByPlaylistID(this.playlistID)
     .then(results => {
       results.getVideos().then( v => {
         this.listVideos = v;
         console.log(v);
-        loader.dismiss();
+        this.dismissLoading();
       });
     })
     .catch(console.error);
 
   }
 
-  goWatchVideo(videoID){
-    this.player.openVideo(videoID);
+  showLoading() {
+    if(!this.loading){
+          this.loading = this.loader.create({
+              content: 'Carregando aguarde...'
+          });
+          this.loading.present();
+      }
+  }
+
+  dismissLoading(){
+      if(this.loading){
+          this.loading.dismiss();
+          this.loading = null;
+      }
+  }
+
+
+  goWatchVideo(videoID,title){
+    //this.player.openVideo(videoID);
+    this.navCtrl.push(PlayerPage,{
+      'videoID':videoID,
+      'videoTitle':title
+    });
   }
 
   ionViewDidLoad() {

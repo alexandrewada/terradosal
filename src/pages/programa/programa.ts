@@ -20,27 +20,41 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 export class ProgramaPage {
 
   public listPlaylists = [];
+  loading;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loading:LoadingController,public yt:YoutubeProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loader:LoadingController,public yt:YoutubeProvider) {
     const youtube = this.yt;
-    const loader = this.loading.create({
-      content: "Carregando aguarde..."
-    });
-    loader.present();
+
+    this.showLoading();
+
+
     youtube.getPlaylistsByChannelID('UCnIEvOh6AIq4Uu6nkTGQhdg')
     .then(results => {
       this.listPlaylists = results;
       console.log(results);
-      loader.dismiss();
+      this.dismissLoading();
     })
     .catch(console.error);
   }
 
-  showLoading():void {
 
-
+  showLoading() {
+    if(!this.loading){
+          this.loading = this.loader.create({
+              content: 'Carregando aguarde...'
+          });
+          this.loading.present();
+      }
   }
+
+  dismissLoading(){
+      if(this.loading){
+          this.loading.dismiss();
+          this.loading = null;
+      }
+  }
+
+
 
   goToPlayList(playlistID,title){
     this.navCtrl.push(VideosPage,{

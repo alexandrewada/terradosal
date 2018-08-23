@@ -1,3 +1,4 @@
+import { SplashPage } from './../pages/splash/splash';
 import { ContatoPageModule } from './../pages/contato/contato.module';
 import { AovivoPageModule } from './../pages/aovivo/aovivo.module';
 import { LocalizacaoPageModule } from './../pages/localizacao/localizacao.module';
@@ -18,7 +19,8 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SplashPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SplashPage
   ],
   providers: [
     StatusBar,

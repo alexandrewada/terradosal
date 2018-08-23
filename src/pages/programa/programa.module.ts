@@ -1,3 +1,4 @@
+import { PlayerPage } from './player/player';
 import { VideosPage } from './videos/videos';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
@@ -8,10 +9,12 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 @NgModule({
   declarations: [
     ProgramaPage,
-    VideosPage
+    VideosPage,
+    PlayerPage
   ],
   entryComponents: [
-    VideosPage
+    VideosPage,
+    PlayerPage
   ],
   providers: [
     YoutubeProvider,
