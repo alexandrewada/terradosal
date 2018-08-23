@@ -12,28 +12,33 @@
 
 </ion-header>
 
-
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label floating>Nome completo</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-label floating>Email</ion-label>
-      <ion-input type="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Celular</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Mensagem</ion-label>
-      <ion-textarea rows="4" maxLength="500"  ></ion-textarea>
-    </ion-item>
-    <ion-item>
-      <button ion-button type="submit" block>Enviar mensagem</button>
-    </ion-item>
-  </ion-list>
+  <form [formGroup]="ContatoFormulario">
+    <ion-card>
+      <ion-card-content>
+        <ion-card-header>
+          <h1>Fale conosco</h1>
+        </ion-card-header>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Nome completo</ion-label>
+            <ion-input type="text" formControlName="nome"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Mensagem</ion-label>
+            <ion-textarea rows="4" formControlName="mensagem" maxLength="500"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <button ion-button type="submit" [disabled]="ContatoFormulario.status == 'INVALID'" block>Enviar mensagem</button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </form>
 </ion-content>

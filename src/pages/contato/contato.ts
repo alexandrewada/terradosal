@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 
 /**
  * Generated class for the ContatoPage page.
@@ -15,11 +17,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ContatoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ContatoFormulario: FormGroup;
+
+  constructor(private fbuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
+    this.ContatoFormulario = this.fbuilder.group({
+      'nome': ['',Validators.required],
+      'email': ['',Validators.required],
+      'mensagem': ['',Validators.required]
+    });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ContatoPage');
+   
+
   }
 
 }
