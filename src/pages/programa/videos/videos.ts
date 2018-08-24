@@ -33,6 +33,7 @@ export class VideosPage {
     .then(results => {
       results.getVideos().then( v => {
         this.listVideos = v;
+        this.listVideos.reverse();
         console.log(v);
         this.dismissLoading();
       });

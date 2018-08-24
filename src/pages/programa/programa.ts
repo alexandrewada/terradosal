@@ -31,6 +31,7 @@ export class ProgramaPage {
     youtube.getPlaylistsByChannelID('UCnIEvOh6AIq4Uu6nkTGQhdg')
     .then(results => {
       this.listPlaylists = results;
+      this.listPlaylists.reverse();
       console.log(results);
       this.dismissLoading();
     })

@@ -17,6 +17,7 @@ import { EmailComposer } from '@ionic-native/email-composer';
 @Component({
   selector: 'page-contato',
   templateUrl: 'contato.html',
+  providers: [EmailComposer]
 })
 export class ContatoPage {
 
@@ -39,7 +40,7 @@ export class ContatoPage {
      });
      
      let email = {
-       to: 'alexandre.wada@200horas.com.br',
+       to: 'app@tvterradoral.com.br',
        attachments: [
        ],
        subject: 'Contato TV do Sal # '+this.ContatoFormulario.get('nome').value,
