@@ -14,7 +14,7 @@ import { HomePage } from '../pages/home/home';
 import { FacebookPageModule } from '../pages/facebook/facebook.module';
 import { ProgramaPageModule } from '../pages/programa/programa.module';
 import { YoutubeProvider } from '../providers/youtube/youtube';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+
 
 @NgModule({
   declarations: [
