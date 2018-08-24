@@ -29,6 +29,10 @@ export class FacebookPage {
     this.loader.dismiss();
   }
 
+  ionViewWillLeave() {
+    this.LoadingOff();
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad FacebookPage');
   }

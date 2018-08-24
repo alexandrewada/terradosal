@@ -43,6 +43,10 @@ export class PlayerPage {
       }
   }
 
+  ionViewWillLeave() {
+    this.dismissLoading();
+  }
+
   ionViewWillEnter(): void {
     this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.youtubeUrl);
   }

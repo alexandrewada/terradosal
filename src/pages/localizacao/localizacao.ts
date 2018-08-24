@@ -29,6 +29,10 @@ export class LocalizacaoPage {
     this.loading.dismiss();
   }
 
+  ionViewWillLeave() {
+    this.LoadingOff();
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad LocalizacaoPage');
   }

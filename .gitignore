@@ -11,6 +11,7 @@ log.txt
 *.sublime-workspace
 .vscode/
 npm-debug.log*
+!node_modules/@ionic/app-scripts/webpack.config.js
 
 .idea/
 .ionic/
@@ -21,6 +22,7 @@ npm-debug.log*
 coverage/
 dist/
 node_modules/
+
 tmp/
 temp/
 platforms/

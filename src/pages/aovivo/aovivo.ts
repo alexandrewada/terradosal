@@ -13,6 +13,7 @@ import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-m
 @Component({
   selector: 'page-aovivo',
   templateUrl: 'aovivo.html',
+  providers: [StreamingMedia]
 })
 export class AovivoPage {
 

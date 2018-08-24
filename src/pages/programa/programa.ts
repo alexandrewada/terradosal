@@ -62,6 +62,10 @@ export class ProgramaPage {
       'programaName':title
     });
   }
+  
+  ionViewWillLeave() {
+    this.dismissLoading();
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProgramaPage');

@@ -66,6 +66,10 @@ export class VideosPage {
     });
   }
 
+  ionViewWillLeave() {
+    this.dismissLoading();
+  }
+
   ionViewDidLoad() {
     console.log(this.listVideos);
   }
