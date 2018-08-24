@@ -1,6 +1,8 @@
+import { MailProvider } from './../../providers/mail/mail';
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 
 
 /**
@@ -19,7 +21,8 @@ export class ContatoPage {
 
   ContatoFormulario: FormGroup;
 
-  constructor(private fbuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private m: MailProvider, private fbuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
+
     this.ContatoFormulario = this.fbuilder.group({
       'nome': ['',Validators.required],
       'email': ['',Validators.required],
@@ -28,8 +31,7 @@ export class ContatoPage {
   }
 
   ionViewDidLoad() {
-   
-
+    this.m.enviarEmail();
   }
 
 }
