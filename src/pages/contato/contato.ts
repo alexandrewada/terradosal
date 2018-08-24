@@ -1,7 +1,8 @@
-import { MailProvider } from './../../providers/mail/mail';
+
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 
 
@@ -21,7 +22,7 @@ export class ContatoPage {
 
   ContatoFormulario: FormGroup;
 
-  constructor(private m: MailProvider, private fbuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private emailComposer: EmailComposer,private fbuilder: FormBuilder,public navCtrl: NavController, public navParams: NavParams) {
 
     this.ContatoFormulario = this.fbuilder.group({
       'nome': ['',Validators.required],
@@ -30,8 +31,28 @@ export class ContatoPage {
     });
   }
 
+  enviarEmail() {
+    this.emailComposer.isAvailable().then((available: boolean) =>{
+      if(available) {
+        //Now we know we can send
+      }
+     });
+     
+     let email = {
+       to: 'alexandre.wada@200horas.com.br',
+       attachments: [
+       ],
+       subject: 'Contato TV do Sal # '+this.ContatoFormulario.get('nome').value,
+       body: this.ContatoFormulario.get('mensagem').value,
+       isHtml: false
+     };
+     
+     // Send a text message using default options
+     this.emailComposer.open(email);
+  }
+
   ionViewDidLoad() {
-    this.m.enviarEmail();
+
   }
 
 }

@@ -14,7 +14,7 @@ import { HomePage } from '../pages/home/home';
 import { FacebookPageModule } from '../pages/facebook/facebook.module';
 import { ProgramaPageModule } from '../pages/programa/programa.module';
 import { YoutubeProvider } from '../providers/youtube/youtube';
-import { MailProvider } from '../providers/mail/mail';
+
 
 
 @NgModule({
@@ -46,8 +46,7 @@ import { MailProvider } from '../providers/mail/mail';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     // {provide: LocationStrategy,useClass: PathLocationStrategy},
-    YoutubeProvider,
-    MailProvider
+    YoutubeProvider
   ]
 })
 export class AppModule {}

@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
@@ -23,7 +24,7 @@ export class AovivoPage {
   startVideo() {
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Video played') },
-      errorCallback: (e) => { console.log('Error streaming') },
+      errorCallback: (e) => { alert('Ocorreu um erro na reprodução do vídeo.') },
       orientation: 'landscape',
       shouldAutoClose: true,
       controls: false
@@ -34,6 +35,7 @@ export class AovivoPage {
 
   ionViewDidLoad() {
     this.startVideo();
+    this.navCtrl.push(HomePage);
   }
 
 }
