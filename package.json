@@ -1,8 +1,8 @@
 {
   "name": "terradosal",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Alexandre Wada",
+  "homepage": "https://web.facebook.com/tvterradosal/?_rdc=1&_rdr",
   "private": true,
   "scripts": {
     "start": "ionic-app-scripts serve",
@@ -65,7 +65,8 @@
       "cordova-plugin-email-composer": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
