@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.tvdosal.myapp" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.tvdosal.myapp" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>TV Terra do Sal</name>
     <description>A TV Terra do Sal é a mais nova emissora de televisão do Rio Grande do Norte, sediada em Mossoró, capital do Oeste Potiguar.</description>
     <author email="app@tvterradoral.com.br" href="http:///www.tvterradosal.com.br">TV Terra do Sal</author>
