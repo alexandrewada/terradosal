@@ -25,7 +25,7 @@ export class AovivoPage {
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Video played') },
       errorCallback: (e) => { alert('Ocorreu um erro na reprodução do vídeo.') },
-      orientation: 'landscape',
+      orientation: 'portrait',
       shouldAutoClose: true,
       controls: false
     };
@@ -37,5 +37,9 @@ export class AovivoPage {
     this.startVideo();
     this.navCtrl.push(HomePage);
   }
+
+  
+
+  
 
 }
