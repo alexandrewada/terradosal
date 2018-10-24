@@ -18,7 +18,7 @@ export class HomePage {
     let options: StreamingVideoOptions = {
       successCallback: () => { console.log('Video played') },
       errorCallback: (e) => { alert('Ocorreu um erro na reprodução do vídeo.') },
-      orientation: 'portrait',
+      orientation: 'landscape',
       shouldAutoClose: true,
       controls: false
     };
